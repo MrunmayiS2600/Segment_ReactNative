@@ -1,5 +1,30 @@
 PODS:
+  - Analytics (4.1.8)
   - boost (1.84.0)
+  - CleverTap-iOS-SDK (7.1.0):
+    - SDWebImage (~> 5.11)
+  - clevertap-react-native (3.3.0):
+    - CleverTap-iOS-SDK (= 7.1.0)
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.11.18.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - DoubleConversion (1.1.6)
   - fast_float (6.1.4)
   - FBLazyVector (0.78.1)
@@ -1525,11 +1550,26 @@ PODS:
     - React-logger (= 0.78.1)
     - React-perflogger (= 0.78.1)
     - React-utils (= 0.78.1)
+  - RNAnalytics (1.5.0):
+    - Analytics
+    - React-Core
+  - RNAnalyticsIntegration-CleverTap (1.5.3):
+    - Analytics
+    - React-Core
+    - RNAnalytics
+    - Segment-CleverTap (~> 1.2.1)
+  - SDWebImage (5.21.0):
+    - SDWebImage/Core (= 5.21.0)
+  - SDWebImage/Core (5.21.0)
+  - Segment-CleverTap (1.2.6):
+    - Analytics
+    - CleverTap-iOS-SDK (>= 4.2.2)
   - SocketRocket (0.7.1)
   - Yoga (0.0.0)
 
 DEPENDENCIES:
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
+  - clevertap-react-native (from `../node_modules/clevertap-react-native`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - fast_float (from `../node_modules/react-native/third-party-podspecs/fast_float.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
@@ -1596,15 +1636,23 @@ DEPENDENCIES:
   - ReactAppDependencyProvider (from `build/generated/ios`)
   - ReactCodegen (from `build/generated/ios`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - "RNAnalytics (from `../node_modules/@segment/analytics-react-native`)"
+  - "RNAnalyticsIntegration-CleverTap (from `../node_modules/@segment/analytics-react-native-clevertap`)"
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
   trunk:
+    - Analytics
+    - CleverTap-iOS-SDK
+    - SDWebImage
+    - Segment-CleverTap
     - SocketRocket
 
 EXTERNAL SOURCES:
   boost:
     :podspec: "../node_modules/react-native/third-party-podspecs/boost.podspec"
+  clevertap-react-native:
+    :path: "../node_modules/clevertap-react-native"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   fast_float:
@@ -1734,11 +1782,18 @@ EXTERNAL SOURCES:
     :path: build/generated/ios
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNAnalytics:
+    :path: "../node_modules/@segment/analytics-react-native"
+  RNAnalyticsIntegration-CleverTap:
+    :path: "../node_modules/@segment/analytics-react-native-clevertap"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
+  Analytics: 9655e0e1c71ea98107cfcb2b14891168acc6c6c9
   boost: 7e761d76ca2ce687f7cc98e698152abd03a18f90
+  CleverTap-iOS-SDK: 571ced90fc6378635db504f9767c62858e2c5286
+  clevertap-react-native: 7a8cc2e5c153862e7d9d93a4c6538710dbb760b2
   DoubleConversion: cb417026b2400c8f53ae97020b2be961b59470cb
   fast_float: 06eeec4fe712a76acc9376682e4808b05ce978b6
   FBLazyVector: bba368dacede4c9dec7a58c9be5a2d3e9ea30cc7
@@ -1803,9 +1858,13 @@ SPEC CHECKSUMS:
   ReactAppDependencyProvider: 8a4769a6193da471cb229cf46e71cd11cd9a4acd
   ReactCodegen: a5efc9399f08ae7ddf99d222340bf859312b4630
   ReactCommon: bd309b74bda8850b05e814a0cc6120152783c0c1
+  RNAnalytics: a6dc48511d5d99b1ecaaf7157d8b5c618d15337e
+  RNAnalyticsIntegration-CleverTap: 924d284c088c6008e7599c06dda472742de22c89
+  SDWebImage: f84b0feeb08d2d11e6a9b843cb06d75ebf5b8868
+  Segment-CleverTap: 1558a5ac123bbc1cf4d4b56c1163ed2552c70230
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
-  Yoga: dea3cbe52f93ef8f722493a505c1add295fe7fba
+  Yoga: b94ff2d7559cb66837c97a3f394ddb817faad4d6
 
-PODFILE CHECKSUM: f2294e24afdd40dc35eaf6853d454c08d78beb4f
+PODFILE CHECKSUM: 916411b40e62d2b5f4eb48c9eebf62955b96332b
 
-COCOAPODS: 1.15.2
+COCOAPODS: 1.16.2
